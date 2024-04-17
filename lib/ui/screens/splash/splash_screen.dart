@@ -25,6 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Container(
           height: height * 0.3,
