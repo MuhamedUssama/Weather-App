@@ -9,10 +9,11 @@ class ApiManager {
   static const String baseUrl = "api.weatherapi.com";
   static const String apiKey = "8f25f70db2b7455095a65059241604";
 
-  Future<WeatherModel> getWeather(String city) async {
+  Future<WeatherModel> getWeather(String city, String days) async {
     Uri url = Uri.https(baseUrl, "v1/forecast.json", {
       "key": apiKey,
       "q": city,
+      "days": days,
     });
 
     http.Response response = await http.get(url);
