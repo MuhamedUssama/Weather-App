@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../utils/app_theme.dart';
 
 class DegreeInfo extends StatelessWidget {
-  final String mainDgree;
+  final String? mainDgree;
   final String maxDgree;
   final String minDgree;
 
@@ -19,7 +19,7 @@ class DegreeInfo extends StatelessWidget {
     return Column(
       children: [
         Text(
-          mainDgree,
+          mainDgree!,
           style: AppTheme.mainWeatherDegree,
         ),
         SizedBox(height: height * 0.001),
