@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    viewModel.getCurrentWeather("cairo");
+    viewModel.getCurrentWeather("cairo", "5");
   }
 
   @override
@@ -113,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       height: height * 0.3,
                       width: width * 0.5,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(ImagesURL.splashScreen),
                           fit: BoxFit.cover,

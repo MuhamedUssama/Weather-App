@@ -11,17 +11,17 @@ class WeatherRepositoryImpl implements WeatherRepositoryContract {
   WeatherRepositoryImpl(this.weatherDataSourceContract);
 
   @override
-  Future<Current?> getCurrentWeather(String city) {
-    return weatherDataSourceContract.getCurrentWeather(city);
+  Future<Current?> getCurrentWeather(String city, String days) {
+    return weatherDataSourceContract.getCurrentWeather(city, days);
   }
 
   @override
-  Future<Forecast?> getForecastWeather(String city) {
-    return weatherDataSourceContract.getForecastWeather(city);
+  Future<Forecast?> getForecastWeather(String city, String days) {
+    return weatherDataSourceContract.getForecastWeather(city, days);
   }
 
   @override
-  Future<Location?> getWeatherLocation(String city) {
-    return weatherDataSourceContract.getWeatherLocation(city);
+  Future<Location?> getWeatherLocation(String city, String days) {
+    return weatherDataSourceContract.getWeatherLocation(city, days);
   }
 }

@@ -12,20 +12,20 @@ class WeatherDataSourceImpl implements WeatherDataSourceContract {
   WeatherDataSourceImpl(this.apiManager);
 
   @override
-  Future<Current?> getCurrentWeather(String city) async {
-    var responce = await apiManager.getWeather(city);
+  Future<Current?> getCurrentWeather(String city, String days) async {
+    var responce = await apiManager.getWeather(city, days);
     return responce.current;
   }
 
   @override
-  Future<Forecast?> getForecastWeather(String city) async {
-    var responce = await apiManager.getWeather(city);
+  Future<Forecast?> getForecastWeather(String city, String days) async {
+    var responce = await apiManager.getWeather(city, days);
     return responce.forecast;
   }
 
   @override
-  Future<Location?> getWeatherLocation(String city) async {
-    var responce = await apiManager.getWeather(city);
+  Future<Location?> getWeatherLocation(String city, String days) async {
+    var responce = await apiManager.getWeather(city, days);
     return responce.location;
   }
 }

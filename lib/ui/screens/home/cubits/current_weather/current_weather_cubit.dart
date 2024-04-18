@@ -12,12 +12,12 @@ class CurrentWeatherViewModel extends Cubit<CurrentWeatherStates> {
   CurrentWeatherViewModel(this.weatherRepositoryContract)
       : super(LoadingState());
 
-  getCurrentWeather(String city) async {
+  getCurrentWeather(String city, String days) async {
     emit(LoadingState());
 
     try {
       var currentWeather =
-          await weatherRepositoryContract.getCurrentWeather(city);
+          await weatherRepositoryContract.getCurrentWeather(city, days);
       emit(SuccessState(currentWeather));
     } catch (e) {
       emit(ErrorState(e.toString()));
