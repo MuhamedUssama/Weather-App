@@ -18,6 +18,8 @@ import '../data/repository_impl/weather_repo_impl.dart' as _i7;
 import '../repository_contract/weather_repo_contract.dart' as _i6;
 import '../ui/screens/home/cubits/current_weather/current_weather_cubit.dart'
     as _i8;
+import '../ui/screens/home/cubits/weather_location/weather_location_cubit.dart'
+    as _i9;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -37,6 +39,8 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i7.WeatherRepositoryImpl(gh<_i4.WeatherDataSourceContract>()));
     gh.factory<_i8.CurrentWeatherViewModel>(
         () => _i8.CurrentWeatherViewModel(gh<_i6.WeatherRepositoryContract>()));
+    gh.factory<_i9.WeatherLocationViewModel>(() =>
+        _i9.WeatherLocationViewModel(gh<_i6.WeatherRepositoryContract>()));
     return this;
   }
 }
